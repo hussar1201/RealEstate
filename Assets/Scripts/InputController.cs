@@ -12,10 +12,11 @@ public class InputController : MonoBehaviour
     bool triggerValue_L = false;
     bool triggerValue_R = false;
 
-    float time_input_interval = 0.1f;
+    float time_input_interval = 0.2f;//0.1f -> 0.2f 수정
     float time_checked = 0f;
 
-
+    public GameObject explainXbtn; //추가
+    private bool firstXtouch = false; //추가
 
     public static InputController instance
     {
@@ -74,14 +75,20 @@ public class InputController : MonoBehaviour
         time_checked += Time.deltaTime;
 
 
-
-
         if (time_input_interval <= time_checked)
         {
             time_checked = 0f;
 
             if (Controller_L.TryGetFeatureValue(CommonUsages.primaryButton, out triggerValue_L) && triggerValue_L)
             {
+                //여기부터
+                if (firstXtouch == false)
+                {
+                    explainXbtn.SetActive(false);
+                }
+                firstXtouch = true;
+                //여기까지 추가 
+
                 UIController.instance.ActiveMenu();
                 MiniMapController.instance.ActiveMenu();
                 Debug.Log("pressed");
