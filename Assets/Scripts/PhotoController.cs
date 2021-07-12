@@ -7,7 +7,7 @@ public class PhotoController : MonoBehaviour
     public Material material_SkyBox;
     public Texture[] arr_Texture;
     
-    private int cnt = 0;
+    //private int cnt = 0;
 
     public static PhotoController instance {
         get
