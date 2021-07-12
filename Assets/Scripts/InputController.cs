@@ -85,8 +85,8 @@ public class InputController : MonoBehaviour
                 if (firstXtouch == false)
                 {
                     explainXbtn.SetActive(false);
+                    firstXtouch = true;
                 }
-                firstXtouch = true;
                 //여기까지 추가 
 
                 UIController.instance.ActiveMenu();
