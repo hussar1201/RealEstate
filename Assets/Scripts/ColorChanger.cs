@@ -8,7 +8,7 @@ public class ColorChanger : MonoBehaviour
     private RawImage part;
     Color color_unselected;
     Color color_selected;
-    Color pointColor = new Color(250 / 255f, 149 / 255f, 11 / 255f);
+    Color pointColor = new Color(255 / 255f, 239 / 255f, 105 / 255f);
 
     void Awake()
     {
